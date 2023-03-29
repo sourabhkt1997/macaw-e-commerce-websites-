@@ -1,8 +1,16 @@
 let mongoose=require("mongoose")
 
 let userSchema=mongoose.Schema({
+    username:String,
     email:String,
-    password:String
+    password:String,
+    cartlist:[String],
+    buylist:[String],
+    purchaselist:[{
+        id:String,
+        dateof_purchase:String,
+        _id:false
+    }]
 },{
     versionKey:false
 })

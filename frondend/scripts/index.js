@@ -1,7 +1,7 @@
 let url="http://localhost:8500"
 
 
-let token=localStorage.getItem("logintoken")
+let token=localStorage.getItem("logintoken")||null
 console.log(token)
 
 
@@ -28,6 +28,7 @@ function closesignup(){
 // sign in popup
 let count=0
 signin.addEventListener("click",()=>{
+    if(!token){
     count++
    if(count%2!==0){
     opensignin()
@@ -36,6 +37,7 @@ signin.addEventListener("click",()=>{
     closesignup()
     closesignin()
    }
+}
 })
 
  //signn up popup
@@ -57,12 +59,14 @@ signinalready.addEventListener("click",()=>{
 
 let signupsubmit=document.getElementById("signupsubmit")
 
-
+//  signup............................
 signupsubmit.addEventListener("click",()=>{
+    
     let confirmpassword=document.getElementById("signuppasswordconfirm").value
 let password=document.getElementById("signuppassword").value
+let username=document.getElementById("username").value
 console.log(password,confirmpassword)
-if(password===confirmpassword){
+if(password===confirmpassword && username&&password){
     fetch("http://localhost:8500/users/register",{
         method:"POST",
         headers:{
@@ -70,7 +74,8 @@ if(password===confirmpassword){
         },
         body:JSON.stringify({
             email:document.getElementById("signupemail").value,
-            password:document.getElementById("signuppassword").value
+            password:document.getElementById("signuppassword").value,
+            username:document.getElementById("username").value
         })
        })
        .then(res=>res.json())
@@ -83,7 +88,8 @@ if(password===confirmpassword){
     else{
         let message=document.getElementById("message")
         message.innerText="please check password"
-    } 
+    
+}
 })
 
 let signinsubmit=document.getElementById("signinsubmit")
@@ -91,7 +97,8 @@ let signinsubmit=document.getElementById("signinsubmit")
 signinsubmit.addEventListener("click",()=>{
     let obj={
         email:document.getElementById("signinemail").value,
-        password:document.getElementById("signinpassword").value
+        password:document.getElementById("signinpassword").value,
+        
      }
      console.log(obj)
      let url=`http://localhost:8500/users/login`
@@ -109,4 +116,35 @@ signinsubmit.addEventListener("click",()=>{
          localStorage.setItem("logintoken",data.token)
      })
 })
+
+window.addEventListener("load",()=>{
+ async function displayuser(){
+    try{
+     fetch(`${url}/users`,{
+        method:"GET",
+        headers:{
+            "Authorization":`Bearer ${token}`
+        }
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+        let userdisplay=document.getElementById("signin")
+        userdisplay.innerText=data[0].username
+        let logout=document.getElementById("logout")
+        logout.innerText="log out"
+        logout.addEventListener("click",()=>{
+            localStorage.removeItem("logintoken");
+        })
+
+    })
+}
+catch(err){
+    console.log(err)
+}
+}
+displayuser()
+})
+
+
 
