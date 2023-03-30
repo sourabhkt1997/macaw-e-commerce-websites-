@@ -18,21 +18,22 @@
 
      }
      #nav_one{
-       border: 1px solid;
+       /* border: 1px solid; */
        width: 200px;
      }
      
      #nav_one img{
-         width: 70%;
+         width: 100%;
          height: 100%;
-         margin-left: 10px;
+         /* margin-left: 10px; */
      }
      #nav_two{
         display: flex; 
-        width: 50%;
+        width: 35%;
         justify-content: space-between;
         margin-right: 30px;
         margin-top: 10px;
+        /* border: 1px solid; */
      }
      #nav_two a{
          text-decoration: none;
@@ -89,6 +90,7 @@
     .dropdown:hover .dropdown-content {
      display: block;
     }
+    /* ......................... */
     .signinpopup h5{
     text-align: center;
     }
@@ -127,9 +129,14 @@
         width: 300px;
         margin-left: 80%;
         margin-top: 50px;
+        position: absolute;
+        top: 50px;
+        border-radius: 5px;
         transform: translate(2%,0%) scale(0.1);
         transition: transform 0.4s,top 0.4s;
         visibility: hidden;
+        background-color: rgb(180, 175, 170);
+        z-index: 2;
     }
     .opensignin{
         visibility: visible;
@@ -173,19 +180,119 @@
         width: 300px;
         margin-left: 80%;
         margin-top: 50px;
-        position: relative;
-        top: -280px ;
+        position: absolute;
+        top: 70px ;
         z-index: 1;
         transform: translate(2%,0%) scale(0.1);
-        transition: transform 0.4s,top 0.4s;
+        transition: transform 0.4s,top 0.4s; 
         visibility: hidden;
+        border-radius: 5px;
         
         }
         .opensignup{
             background-color: rgb(198, 198, 213);
             visibility: visible;
-            /* top: 250px; */
+             /* top: 250px; */
             transform:translate(0%,-10%) scale(1); 
         }
        
+        /* ........................ */
+
+        #home-one{
+            border: 1px solid red;
+            /* margin-bottom: -20px; */
+        }
+        #home-one img{
+            width: 100%;
+            margin-top: 0px;
+        }
+        #home-one-text{
+            color: rgb(228, 238, 238);
+            text-align: center;
+            /* border: 1px solid blue; */
+            width: 40%;
+            position: absolute;
+            top: 300px;
+            left: 58%;
+        }
+        #home-two{
+            margin: auto;
+            width: 80%;
+            border: 1px solid;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+             
+        }
+        #home-two div{
+            width: 100%;
+        border: 1px solid;
+        }
+        #home-two img{
+            width: 100%;
+        }
+
+        #home-three-two{
+            margin: auto;
+            width: 80%;
+            border: 1px solid;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);  
+            gap:10px;
+        }
+        #home-three-two button{
+             background-color: white;
+             width: 100%;
+             height: 30px;
+        }
+        #home-three-one{
+            /* border: 1px solid; */
+            margin-top: 20px;
+            text-align: center;
+        }
+
+       /* footer     .................. */
+       #footer{
+        padding-top: 20px;
+        margin-top:20px;
+        background-color: rgb(223, 226, 228);
+        
+       }
+       #footer p{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 15px;
+       }
+        #footer-one{
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            
+        }
+        #footer-two-one{
+            border: 1px solid;
+           width:20%;
+           display: flex;
+           height: 40px;
+           justify-content: space-around;
+           margin-left: 7%;
+           margin-top: 20px;
+        }
+        #footer-two-one div{
+             border: 1px solid;
+        }
+        #footer-two-one img{
+            width:50%;
+        }
+        #footer-two-two {
+            width: 10%;
+            height: 40px;
+          border: 1px solid;
+          margin-left: 7%;
+          margin-top: 20px;
+        }
+        #footer-two-two img{
+            width: 100%;
+            height: 40px;
+        }
+
+
  
