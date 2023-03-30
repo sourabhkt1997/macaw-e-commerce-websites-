@@ -6,8 +6,8 @@ let jwt = require('jsonwebtoken')
 
 
 userrouter.post("/register",async(req,res)=>{
-        let {email,password}=req.body
-        console.log(req.body,"g")
+    console.log(req.body)
+        let {email,password,username,cartlist,buylist,purchaselist}=req.body
         try{
             let data=await UserModel.findOne({email})
             if(data){
@@ -17,7 +17,11 @@ userrouter.post("/register",async(req,res)=>{
         bcrypt.hash(password,5,async(err, hash)=>{
             let userdata= new UserModel({
                 email:email,
-                password:hash
+                password:hash,
+                username:username,
+                cartlist:cartlist,
+                buylist:buylist,
+                purchaselist:purchaselist
             })
             await userdata.save()
             console.log(userdata,"userdata")
@@ -56,7 +60,24 @@ userrouter.post("/login",async(req,res)=>{
 
 })
 
-// userrouter.get()
+userrouter.get("/",async(req,res)=>{
+      let token=req.headers.authorization.split(" ")[1]
+      let decoded=jwt.verify(token,"sourabh")
+    try{
+       if(decoded){
+        let data=await UserModel.find({_id:decoded.userid})
+        console.log(data,"******")
+        res.status(200).send(data)
+       } 
+       else{
+        res.status(400).send({"messgae":"no user found"})
+       }
+
+    }
+    catch(err){
+        res.status(400).send({"message":err.message})
+    }
+})
 
 
 
