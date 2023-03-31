@@ -1,5 +1,6 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
 }
 
 #navdiv{
@@ -13,7 +14,7 @@
     justify-content: space-between;
     width:100%;
     height:60px;
-    /* z-index: 1; */
+    z-index: 1;
 
 }
 #nav_one{
@@ -72,7 +73,7 @@
    background-color: white;
    min-width: 160px;
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
 }
 .dropdown-content a {
 float: none;
@@ -82,6 +83,7 @@ text-decoration: none;
 display: block;
 text-align: left;
 font-weight: bold;
+z-index: 3;
 }
 .dropdown-content a:hover {
  background-color:rgb(238, 235, 235);
@@ -125,17 +127,20 @@ display: block;
     display: flex;
     justify-content: space-between;
     position: sticky;
+     /* z-index: -1; */
+     background-color: rgb(245, 249, 249);
 }
 #product{
-    border: 1px solid;
-    width: 76%;
-    /* height:500px; */
+    /* border: 1px solid; */
+    width: 100%;
+    /* position: relative; */
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: (350px);
     gap: 10px;
     top:0px;
     overflow: scroll;
+    
 }
 #product::-webkit-scrollbar{
     display: none;
@@ -185,10 +190,15 @@ display: block;
 }
 #filter{
     /* border: 1px solid; */
-    width: 23%;
+    margin-right: 60px;
+    width: 25%;
     height: 200px;
     position:sticky;
     top:0px;
+}
+#filterby{
+    margin-bottom: 20px;
+    font-weight: bolder;
 }
 #filter span{
     margin-top: 20px;
@@ -213,4 +223,6 @@ display: block;
     margin-left: 70%;
     
 }
-
+.filter-dropdown{
+    
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/cart.css">
+</head>
+<body>
+    <div id="cartpage"></div>
+    <div id=buy>
+       <h3 >Total item <span id="totalitem"></span></h3>
+       <h3>cart total <span id="totalprice"> </span></h3>
+       <div id="address">
+        <h3>Shipping address</h3>
+        <form id="form">
+            <h4>fullname</h4>
+            <input type="text">
+            <h4>Number</h4>
+            <input type="number">
+            <h4>Pincode</h4>
+            <input type="number" >
+            <h4>house No</h4>
+            <input type="text">
+            <h4>Town</h4>
+            <input type="text">
+            <input id="submit" type="submit" value="submit">
+        </form>
+       </div>
+       <div>
+        <div id="payment">
+            <h5>payment option</h5>
+            <a href="./payment.html">
+            <h3 id="upi">UPI ID/Net Banking </h3> 
+            </a>
+            <a href="./payment.html">
+            <h3>Pay on Delivery</h3>
+            </a>
+        </div>
+       </div>
+
+    </div>
+    <div id="logo">
+        <img src="macaw logo again.jpg" alt="">
+    </div>
+        <h1 id="notice">your cart is empty</h1>
+        <a id="home" href="./index.html">Homepage</a>
+        <a id="store" href="./store.html">store</a>
+
+</body>
+<script src="scripts/cart.js"></script>
+</html>

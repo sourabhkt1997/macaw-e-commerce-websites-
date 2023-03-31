@@ -4,7 +4,10 @@ let userSchema=mongoose.Schema({
     username:String,
     email:String,
     password:String,
-    cartlist:[String],
+    cartlist:[{
+        id:String,
+        quantity:Number
+    }],
     buylist:[String],
     purchaselist:[{
         id:String,

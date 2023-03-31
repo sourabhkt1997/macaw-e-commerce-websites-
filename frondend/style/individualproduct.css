@@ -1,0 +1,396 @@
+* {
+    margin: 0px;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  #navdiv{
+    height:40px;
+}
+#nav{
+    display: flex;
+    border: 1px solid rebeccapurple;
+    position: fixed;
+    background-color: white;
+    justify-content: space-between;
+    width:100%;
+    height:60px;
+    /* z-index: 1; */
+
+}
+#nav_one{
+  /* border: 1px solid; */
+  width: 200px;
+}
+
+#nav_one img{
+    width: 100%;
+    height: 100%;
+    /* margin-left: 10px; */
+}
+#nav_two{
+   display: flex; 
+   width: 35%;
+   justify-content: space-between;
+   margin-right: 30px;
+   margin-top: 10px;
+   /* border: 1px solid; */
+}
+#nav_two a{
+    text-decoration: none;
+}
+#nav_three{
+   margin-left: 10%;
+   margin-top: 10px; 
+   border: 1px solid;
+}
+#nav_three input{
+    height: 20px;
+}
+
+#nav_four{
+   margin-top: 10px; 
+   border: 1px solid red;
+}
+#nav_five{ 
+   width: 5%;
+   margin-top: 10px;
+   border: 1px solid;
+   
+}
+#nav_five img:nth-child(1){
+    width: 50%;
+    border: 1px solid;
+    margin-left: 40%;
+}
+#nav_five img:nth-child(2){
+    width: 25%;
+    margin-left:40px;
+    margin-top: 10px;
+}
+.dropdown-content {
+   display: none;
+    position: absolute;
+   background-color: white;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+font-weight: bold;
+}
+.dropdown-content a:hover {
+ background-color:rgb(238, 235, 235);
+}
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* ............................................ */
+
+.signinpopup h5{
+  text-align: center;
+  }
+  .signinpopup input{
+      width: 80%;
+      margin-left: 10%;
+      height: 20px;
+      margin-top: 20px;
+      text-align: center;
+  }
+  .signinpopup button{
+      width: 81%;
+      margin-left: 11%;
+      margin-top: 20px;
+  }
+  .signinpopup p{
+      width: 80%;
+      margin-left: 10%;
+      text-align: center;
+      font-size: 12px;
+   }
+   .signinpopup h3{
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 25px;
+  }
+  .signinpopup span{
+   color: rgb(56, 24, 239);
+   margin-right: 10px;
+   font-weight: bolder;
+   border: 1px solid;
+   
+  }
+  .signinpopup{
+      border: 1px solid ;
+      width: 300px;
+      margin-left: 80%;
+      margin-top: 50px;
+      position: absolute;
+      top: 50px;
+      border-radius: 5px;
+      transform: translate(2%,0%) scale(0.1);
+      transition: transform 0.4s,top 0.4s;
+      visibility: hidden;
+      background-color: rgb(180, 175, 170);
+      z-index: 2;
+  }
+  .opensignin{
+      visibility: visible;
+      /* top: 250px; */
+      transform:translate(0%,-10%) scale(1); 
+  }
+  .signuppopup h5{
+      text-align: center;
+      }
+      .signuppopup input{
+          width: 80%;
+          margin-left: 10%;
+          height: 20px;
+          margin-top: 20px;
+          text-align: center;
+      }
+      .signuppopup button{
+          width: 81%;
+          margin-left: 11%;
+          margin-top: 20px;
+      }
+      .signuppopup p{
+          width: 80%;
+          margin-left: 10%;
+          text-align: center;
+          font-size: 12px;
+       }
+       .signuppopup h3{
+          font-size: 14px;
+          text-align: center;
+          margin-bottom: 25px;
+      }
+      .signuppopup span{
+       color: rgb(38, 0, 255);
+       margin-right: 10px;
+       font-weight: bolder;
+      }
+
+      .signuppopup{
+      border: 1px solid ;
+      width: 300px;
+      margin-left: 80%;
+      margin-top: 50px;
+      position: absolute;
+      top: 70px ;
+      z-index: 1;
+      transform: translate(2%,0%) scale(0.1);
+      transition: transform 0.4s,top 0.4s; 
+      visibility: hidden;
+      border-radius: 5px;
+      
+      }
+      .opensignup{
+          background-color: rgb(198, 198, 213);
+          visibility: visible;
+           /* top: 250px; */
+          transform:translate(0%,-10%) scale(1); 
+      }
+     
+      /* ........................ */
+
+  
+  #main {
+    display: flex;
+    /* height: 200vh; */
+  }
+  #proimg {
+    width: 50%;
+    /* border: 1px solid; */
+  }
+  #proimg img {
+    width: 100%;
+  }
+  #details {
+    width: 50%;
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+  }
+  #path {
+    display: flex;
+    /* border: 1px solid; */
+    margin-top: 80px;
+  }
+  #path a {
+    color: black;
+    font-size: 25px;
+    padding-right: 10px;
+    text-decoration: none;
+  }
+  #path2 {
+    border-left: 2px solid;
+    padding-left: 10px;
+  }
+  #name {
+    margin-top: 20px;
+  }
+  #color {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+  #colorbutton button {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: 0px;
+    margin-top: 15px;
+  }
+  #colorbutton button:nth-child(1) {
+    background-color: black;
+  }
+  #colorbutton button:nth-child(2) {
+    background-color: rgb(40, 16, 224);
+  }
+  #colorbutton button:nth-child(3) {
+    background-color: rgb(238, 242, 131);
+  }
+  #size {
+    display: flex;
+    /* border: 1px solid; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #size p:nth-child(2) {
+    margin-left: 20px;
+  }
+  /* #sizebutton{
+      border: 1px solid;
+  } */
+  .size {
+    width: 60px;
+    height: 38px;
+    margin-right: 10px;
+    border: 0px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-size: 20px;
+  }
+  .parchase {
+    border: 0px;
+    width: 80%;
+    height: 40px;
+    font-size: larger;
+    background-color: black;
+    color: white;
+  }
+  #parchasediv {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(168, 163, 163);
+  }
+  #prodetails {
+    margin-top: 30px;
+  }
+  #prodetails1 {
+    font-size: 20px;
+  }
+  #prodetails p {
+    margin-top: 20px;
+  }
+  #more {
+    margin-top: 20px;
+  }
+  #colordiv {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(168, 163, 163);
+    border-top: 1px solid rgb(168, 163, 163);
+    margin-top: 20px;
+  }
+  .buy {
+    color: rgb(14, 226, 14);
+  }
+  .loginfirst{
+    color: #b90c0c;
+    font-weight: bolder;
+  }
+  
+  #trending {
+    height: 110px;
+    /* margin-top: 100px; */
+    width: 100%;
+    text-align: center;
+  }
+  #trending h4 {
+    margin-top: 50px;
+    font-size: 25px;
+    padding-top: 40px;
+  }
+  #trendProduct {
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  
+  .productDiv {
+    /* border: 2px solid; */
+    min-width: 350px;
+    height: 350px;
+  }
+  #trendProduct::-webkit-scrollbar {
+    display: none;
+  }
+  .productDiv img {
+    width: 100%;
+  }
+  /* footer     .................. */
+  #footer{
+    padding-top: 20px;
+    margin-top:20px;
+    background-color: rgb(223, 226, 228);
+    
+   }
+   #footer p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+   }
+    #footer-one{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        
+    }
+    #footer-two-one{
+        border: 1px solid;
+       width:20%;
+       display: flex;
+       height: 40px;
+       justify-content: space-around;
+       margin-left: 7%;
+       margin-top: 20px;
+    }
+    #footer-two-one div{
+         border: 1px solid;
+    }
+    #footer-two-one img{
+        width:50%;
+    }
+    #footer-two-two {
+        width: 10%;
+        height: 40px;
+      border: 1px solid;
+      margin-left: 7%;
+      margin-top: 20px;
+    }
+    #footer-two-two img{
+        width: 100%;
+        height: 40px;
+    }
+
+/* footer end..................... */

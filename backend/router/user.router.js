@@ -78,6 +78,46 @@ userrouter.get("/",async(req,res)=>{
         res.status(400).send({"message":err.message})
     }
 })
+userrouter.get("/find/:id",async(req,res)=>{
+    let {id}=req.params
+    let token=req.headers.authorization.split(" ")[1]
+    console.log(token)
+    let decoded=jwt.verify(token,"sourabh")
+  try{
+     if(decoded){
+      let data=await UserModel.find({_id:id})
+      console.log(data,"******")
+      res.status(200).send(data)
+     } 
+     else{
+      res.status(400).send({"messgae":"no user found"})
+     }
+
+  }
+  catch(err){
+      res.status(400).send({"message":err.message})
+  }
+})
+
+userrouter.patch("/useraccount/:id",async(req,res)=>{
+     let {id}=req.params
+     let payload=req.body
+    let token=req.headers.authorization.split(" ")[1]
+    let decoded=jwt.verify(token,"sourabh")
+  try{
+     if(decoded){
+      let data=await UserModel.findByIdAndUpdate({_id:id},payload)
+      res.status(200).send({"messgae":" updated"})
+     } 
+     else{
+      res.status(400).send({"messgae":"cant update"})
+     }
+
+  }
+  catch(err){
+      res.status(400).send({"message":err.message})
+  }
+})
 
 
 
