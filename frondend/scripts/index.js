@@ -129,6 +129,7 @@ window.addEventListener("load",()=>{
     .then(res=>res.json())
     .then(data=>{
         console.log(data)
+        localStorage.setItem("userid",data[0]._id)
         let userdisplay=document.getElementById("signin")
         userdisplay.innerText=data[0].username
         let logout=document.getElementById("logout")

@@ -1,0 +1,118 @@
+*{
+    background-color: rgb(18, 2, 2);
+    margin: 0px;
+  }
+  #cartpage{
+      width: 15%;
+      display: grid;
+      border: 1px solid;
+      overflow-y:scroll;
+      margin-left: 30%;
+      height: 100vh;
+      background-color: rgb(243, 237, 237);
+  }
+  #cartpage::-webkit-scrollbar { 
+   display: none;
+  }
+  #cartdiv {
+      background-color: white;
+      z-index: 2;
+      
+  }
+  #cartdiv img{
+      width:200px;
+      height: 200px;
+      display: block;
+      margin: auto;
+  }
+  #cartdiv h4,h3,p,button,span{
+      margin: 2px;
+      background-color: white;
+  }
+  #buy{
+      margin-top: 30px;
+      position: absolute;
+      top: 0;
+      right: 300px;
+      /* border: 1px solid; */
+      width: 20.8%;
+      background-color:#FFEBEE
+  }
+  #buy input{
+      width:96%;
+      height:25px;
+      margin-bottom: 10px;
+      background-color:#FFEBEE;
+      margin-left:3px;
+      border: 1px solid;
+      
+  }
+  #buy h4,h3{
+      margin: 0px;
+      text-align:start;
+      background-color:#FFEBEE;
+  }
+  #address{
+      margin-top: 30px;
+      background-color:#FFEBEE;
+  }
+  #payment{
+      /* border: 1px solid; */
+      margin-top: 30px;
+      text-align: center;
+      background-color: white;
+  }
+  #payment h3{
+      border: 1px solid;
+      padding: 20px;
+      /* background-color: rgb(16, 17, 16); */
+      /* color: azure; */
+      text-align: start;
+      background-color:#EEEEEE;
+
+  }
+  #payment h3:hover{
+      background-color: bisque;
+  }
+  #payment h5{
+      background-color: white;
+  }
+  #logo{
+      position: absolute;
+      top: 30%;
+      left: 6%
+  }
+  #logo img{
+      width: 110%;
+  }
+  #form{
+      background-color:#FFEBEE
+  }
+  #notice{
+      color: rgb(19, 20, 20);
+      position: absolute;
+      top: 0;
+      left:32%;
+      font-size:150%;
+      background-color:white;
+      z-index:1 ;
+  }
+  #home{
+      color: antiquewhite;
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      font-size: 20px;
+  }
+  #store{
+      color: antiquewhite;
+      position: absolute;
+      top: 0;
+      left: 150px;
+      text-decoration: none;
+      font-size: 20px;
+  }
+  
+  #payment a{
+      text-decoration: none;
+  }

@@ -51,24 +51,6 @@ productrouter.get("/",async(req,res)=>{
             let data= await ProductModel.find()
        res.status(200).send(data)
         }
-        // if(ratingmax&&ratingmin){
-        //     ratingmax=+ratingmax
-        //     ratingmin=+ratingmin
-        //     console.log(ratingmax,ratingmin)
-        //     data=await ProductModel.find({$and:[{rating:{$gte:ratingmin}},{rating:{$lte:ratingmax}}]})
-        //     res.status(200).send(data)  
-        // }
-
-        // if(tag){
-        //     data=await ProductModel.find({sellingCount:tag})
-        // }
-        // if(title){
-        //     let data=await ProductModel.find({title:{$regex:title,options:"i"}})
-        // }
-        // else{
-        //     let data= await ProductModel.find()
-        //       res.status(200).send(data)
-        // }
     }
     catch(err){
         res.status(400).send({'messgae':err.messgae})  
