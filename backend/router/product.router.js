@@ -16,15 +16,17 @@ productrouter.post("/addproduct",async(req,res)=>{
     }
 })
 
-// productrouter.get("/",async(req,res)=>{
-//     try{
-//        let data= await ProductModel.find()
-//        res.status(200).send(data)
-//     }
-//     catch(err){
-//         res.status(400).send({'messgae':err.messgae})  
-//     }
-// })
+productrouter.get("/findproduct",async(req,res)=>{
+    let{proname}=req.query
+    console.log(proname)
+    try{
+       let data= await ProductModel.find({$or:[{title:{$regex:proname,$options:"i"}},{category:{$regex:proname,$options:"i"}}]})
+       res.status(200).send(data)
+    }
+    catch(err){
+        res.status(400).send({'messgae':err.messgae})  
+    }
+})
 
 productrouter.get("/:id",async(req,res)=>{
     let {id}=req.params

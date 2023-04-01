@@ -3,7 +3,22 @@ let url="http://localhost:8500"
 
 let token=localStorage.getItem("logintoken")||null
 console.log(token)
+    let cartredirect= document.getElementById("nav_five")
+    
+    cartredirect.addEventListener("click",()=>{
+        if(token){
+       console.log(8)
+       window.location.href="./cart.html"
+        }
+        else{
+            cartredirect.innerHTML=null
+            cartredirect.innerHTML="PLEASE LOGIN FIRST"
+        }
 
+    })
+
+
+    
 
 let signinpop=document.getElementById("signinpopup")
 let signuppop=document.getElementById("signuppopup")
@@ -114,10 +129,11 @@ signinsubmit.addEventListener("click",()=>{
         console.log(data)
          console.log(data.token)
          localStorage.setItem("logintoken",data.token)
+       
      })
-})
 
-window.addEventListener("load",()=>{
+})
+  if(token){
  async function displayuser(){
     try{
      fetch(`${url}/users`,{
@@ -145,7 +161,52 @@ catch(err){
 }
 }
 displayuser()
-})
+  }
 
+// ...........search..........//
+
+
+let search=document.getElementById("search")
+let searchdropdown=document.getElementById("searchdropdown")
+search.addEventListener("input",()=>{
+    searchdropdown.innerHTML=null
+    let searchword=search.value
+    
+    
+    fetch(`${url}/products/findproduct?proname=${searchword}`)
+
+    .then(res=>res.json())
+      .then(data=>{
+    console.log(data)
+      data.forEach(element => {
+        let worddiv=document.createElement("div")
+        worddiv.setAttribute("id","worddiv")
+        worddiv.addEventListener("click",()=>{
+            console.log("mm")
+            localStorage.setItem("element",element._id)
+            window.location.href="./individualproduct.html"
+        })
+         let word=document.createElement("h5")
+         word.innerText=element.title
+         worddiv.append(word)
+         searchdropdown.append(worddiv)
+         console.log(searchword)
+        let x=false
+        if(searchword){
+         x=true
+         }
+         console.log(x)
+         if(x==false){
+        searchdropdown.innerHTML=null
+          }
+      });
+    
+    })
+    
+
+    
+})
+  
+  
 
 

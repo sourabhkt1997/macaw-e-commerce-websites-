@@ -8,7 +8,10 @@ let userSchema=mongoose.Schema({
         id:String,
         quantity:Number
     }],
-    buylist:[String],
+    buylist:[{
+        id:String,
+        quantity:Number
+    }],
     purchaselist:[{
         id:String,
         dateof_purchase:String,
