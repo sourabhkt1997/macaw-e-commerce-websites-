@@ -6,11 +6,11 @@ let producrSchema=mongoose.Schema({
     price:Number,
     category:String,
     gender:String,
-    rating:{
-        type:Number,
-        min:1,
-        max:5
-    },
+    rateduser:[{
+        id:String,
+        rating:Number
+    }],
+    rating:Number,
     sellingCount:Number,
     size:Number,
 },{

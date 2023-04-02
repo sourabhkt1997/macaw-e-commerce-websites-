@@ -1,8 +1,74 @@
 
-let url="http://localhost:8500" 
+let url="https://lazy-plum-marlin-gown.cyclic.app/" 
 let product=document.getElementById("product")
 let message=document.getElementById("filtermessage")
+let token=localStorage.getItem("logintoken")||null
 
+let cartredirect= document.getElementById("nav_five")
+    
+cartredirect.addEventListener("click",()=>{
+    if(token){
+   console.log(8)
+   window.location.href="./cart.html"
+    }
+    else{
+        cartredirect.innerHTML=null
+        cartredirect.innerHTML="PLEASE LOGIN FIRST"
+    }
+
+})
+
+
+let logout=document.getElementById("logout")
+      
+        logout.addEventListener("click",()=>{
+             if(token){
+            console.log("ooo")
+            localStorage.removeItem("logintoken")
+            setTimeout(()=>{
+                window.location.reload()
+            },1000)
+        }
+ })
+
+
+// /...............display user/...........
+if(token){
+    async function displayuser(){
+       try{
+        fetch(`${url}/users`,{
+           method:"GET",
+           headers:{
+               "Authorization":`Bearer ${token}`
+           }
+       })
+       .then(res=>res.json())
+       .then(data=>{
+           console.log(data)
+           localStorage.setItem("userid",data[0]._id)
+           let userdisplay=document.getElementById("signin")
+           userdisplay.innerText=data[0].username
+           let logout=document.getElementById("logout")
+           logout.innerText="log out"
+           logout.addEventListener("click",()=>{
+               localStorage.removeItem("logintoken");
+               
+               setTimeout(()=>{
+                   window.location.reload()
+               },1000)
+              
+           })
+   
+       })
+   }
+   catch(err){
+       console.log(err)
+   }
+   }
+   displayuser()
+     }
+
+    //  /////display user end..............
  function render(data){  
     product.innerHTML=null
    data.forEach((element)=>{
@@ -40,7 +106,6 @@ let message=document.getElementById("filtermessage")
         product.innerHTML=""
         render(data)  
     })
-
     let shoedata=[]
     let tshirtdata=[]
     let pantdata=[]
@@ -112,7 +177,22 @@ let message=document.getElementById("filtermessage")
         .then(res=>res.json())
         .then(data=>{
             data.forEach((element)=>{
-                if(element.category=="pants"){
+                if(element.category=="pant"){
+                    pantdata.push(element)
+                }
+                
+                
+            })
+            render(pantdata)
+        })
+    })
+    bag4.addEventListener("click",()=>{
+       
+        fetch(`${url}/products`)
+        .then(res=>res.json())
+        .then(data=>{
+            data.forEach((element)=>{
+                if(element.category=="shirt"){
                     pantdata.push(element)
                 }
                 
@@ -290,4 +370,89 @@ let message=document.getElementById("filtermessage")
      })
 
      })
+
+
+
+     
+// ...........search..........//
+
+
+let search=document.getElementById("search")
+let searchdropdown=document.getElementById("searchdropdown")
+search.addEventListener("input",()=>{
+    searchdropdown.innerHTML=null
+    let searchword=search.value
+    
+    
+    fetch(`${url}/products/findproduct?proname=${searchword}`)
+
+    .then(res=>res.json())
+      .then(data=>{
+    console.log(data)
+      data.forEach(element => {
+        let worddiv=document.createElement("div")
+        worddiv.setAttribute("id","worddiv")
+        worddiv.addEventListener("click",()=>{
+            console.log("mm")
+            localStorage.setItem("element",element._id)
+            window.location.href="./individualproduct.html"
+        })
+         let word=document.createElement("h5")
+         word.innerText=element.title
+         worddiv.append(word)
+         searchdropdown.append(worddiv)
+         console.log(searchword)
+        let x=false
+        if(searchword){
+         x=true
+         }
+         console.log(x)
+         if(x==false){
+        searchdropdown.innerHTML=null
+          }
+      });
+    
+    })
+    
+
+    
+})
+
+let defaultdata=[]
+let sort=document.getElementById("sort")
+let sort_l_h=document.getElementById("lowtohigh")
+sort.addEventListener("click",()=>{
+   console.log(sort.value)
+   if(sort.value=="high to low" ){
+       fetch(`${url}/products`)
+       .then(res=>res.json())
+       .then(data=>{  
+           data=data.sort((a,b)=>b.price-a.price)
+           console.log(data)
+           render(data)
+           })
+           
+       }
+       else if(sort.value=="low to high" ){
+           fetch(`${url}/products`)
+           .then(res=>res.json())
+           .then(data=>{  
+               data=data.sort((a,b)=>a.price-b.price)
+               console.log(data)
+               render(data)
+               })
+               
+           }
+           else{
+               fetch(`${url}/products`)
+               .then(res=>res.json())
+               .then(data=>{  
+                  data.forEach((element)=>{
+                    defaultdata.push(element)
+                  })
+                   render(data)
+                   })
+                   
+               }
+})
 

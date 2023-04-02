@@ -8,7 +8,7 @@
 }
 #nav{
     display: flex;
-    border: 1px solid rebeccapurple;
+    /* border: 1px solid rebeccapurple; */
     position: fixed;
     background-color: white;
     justify-content: space-between;
@@ -32,7 +32,7 @@
    width: 35%;
    justify-content: space-between;
    margin-right: 30px;
-   margin-top: 10px;
+   margin-top: 15px;
    /* border: 1px solid; */
 }
 #nav_two a{
@@ -40,26 +40,28 @@
 }
 #nav_three{
    margin-left: 10%;
-   margin-top: 10px; 
-   border: 1px solid;
+   margin-top: 15px; 
+   /* border: 1px solid; */
 }
 #nav_three input{
     height: 20px;
 }
 
 #nav_four{
-   margin-top: 10px; 
-   border: 1px solid red;
+   margin-top: 15px; 
+   /* border: 1px solid red; */
+   width: 8%;
 }
 #nav_five{ 
-   width: 5%;
+   width: 7%;
    margin-top: 10px;
-   border: 1px solid;
+   /* border: 1px solid; */
+   font-weight: bold;
    
 }
 #nav_five img:nth-child(1){
-    width: 50%;
-    border: 1px solid;
+    width: 40%;
+    /* border: 1px solid; */
     margin-left: 40%;
 }
 #nav_five img:nth-child(2){
@@ -90,114 +92,124 @@ font-weight: bold;
 .dropdown:hover .dropdown-content {
 display: block;
 }
-
-/* ............................................ */
-
+/* ......................... */
 .signinpopup h5{
-  text-align: center;
-  }
-  .signinpopup input{
-      width: 80%;
-      margin-left: 10%;
-      height: 20px;
-      margin-top: 20px;
-      text-align: center;
-  }
-  .signinpopup button{
-      width: 81%;
-      margin-left: 11%;
-      margin-top: 20px;
-  }
-  .signinpopup p{
-      width: 80%;
-      margin-left: 10%;
-      text-align: center;
-      font-size: 12px;
-   }
-   .signinpopup h3{
-      font-size: 14px;
-      text-align: center;
-      margin-bottom: 25px;
-  }
-  .signinpopup span{
-   color: rgb(56, 24, 239);
-   margin-right: 10px;
-   font-weight: bolder;
-   border: 1px solid;
-   
-  }
-  .signinpopup{
-      border: 1px solid ;
-      width: 300px;
-      margin-left: 80%;
-      margin-top: 50px;
-      position: absolute;
-      top: 50px;
-      border-radius: 5px;
-      transform: translate(2%,0%) scale(0.1);
-      transition: transform 0.4s,top 0.4s;
-      visibility: hidden;
-      background-color: rgb(180, 175, 170);
-      z-index: 2;
-  }
-  .opensignin{
-      visibility: visible;
-      /* top: 250px; */
-      transform:translate(0%,-10%) scale(1); 
-  }
-  .signuppopup h5{
-      text-align: center;
-      }
-      .signuppopup input{
-          width: 80%;
-          margin-left: 10%;
-          height: 20px;
-          margin-top: 20px;
-          text-align: center;
-      }
-      .signuppopup button{
-          width: 81%;
-          margin-left: 11%;
-          margin-top: 20px;
-      }
-      .signuppopup p{
-          width: 80%;
-          margin-left: 10%;
-          text-align: center;
-          font-size: 12px;
-       }
-       .signuppopup h3{
-          font-size: 14px;
-          text-align: center;
-          margin-bottom: 25px;
-      }
-      .signuppopup span{
-       color: rgb(38, 0, 255);
-       margin-right: 10px;
-       font-weight: bolder;
-      }
+text-align: center;
+}
+.signinpopup input{
+   width: 80%;
+   margin-left: 10%;
+   height: 20px;
+   margin-top: 20px;
+   text-align: center;
+}
+.signinpopup button{
+   width: 81%;
+   margin-left: 11%;
+   margin-top: 20px;
+}
+.signinpopup p{
+   width: 80%;
+   margin-left: 10%;
+   text-align: center;
+   font-size: 12px;
+}
+.signinpopup h3{
+   font-size: 14px;
+   text-align: center;
+   margin-bottom: 25px;
+}
+.signinpopup span{
+color: rgb(56, 24, 239);
+margin-right: 10px;
+font-weight: bolder;
+/* border: 1px solid; */
 
-      .signuppopup{
-      border: 1px solid ;
-      width: 300px;
-      margin-left: 80%;
-      margin-top: 50px;
-      position: absolute;
-      top: 70px ;
-      z-index: 1;
-      transform: translate(2%,0%) scale(0.1);
-      transition: transform 0.4s,top 0.4s; 
-      visibility: hidden;
-      border-radius: 5px;
-      
-      }
-      .opensignup{
-          background-color: rgb(198, 198, 213);
-          visibility: visible;
-           /* top: 250px; */
-          transform:translate(0%,-10%) scale(1); 
-      }
-     
+}
+.signinpopup{
+   border: 1px solid ;
+   width: 300px;
+   margin-left: 80%;
+   margin-top: 50px;
+   position: absolute;
+   top: 50px;
+   border-radius: 5px;
+   transform: translate(2%,0%) scale(0.1);
+   transition: transform 0.4s,top 0.4s;
+   visibility: hidden;
+   background-color: rgb(180, 175, 170);
+   z-index: 2;
+}
+.opensignin{
+   visibility: visible;
+   /* top: 250px; */
+   transform:translate(0%,-10%) scale(1); 
+}
+.signuppopup h5{
+   text-align: center;
+   }
+   .signuppopup input{
+       width: 80%;
+       margin-left: 10%;
+       height: 20px;
+       margin-top: 20px;
+       text-align: center;
+   }
+   .signuppopup button{
+       width: 81%;
+       margin-left: 11%;
+       margin-top: 20px;
+   }
+   .signuppopup p{
+       width: 80%;
+       margin-left: 10%;
+       text-align: center;
+       font-size: 12px;
+    }
+    .signuppopup h3{
+       font-size: 14px;
+       text-align: center;
+       margin-bottom: 25px;
+   }
+   .signuppopup span{
+    color: rgb(38, 0, 255);
+    margin-right: 10px;
+    font-weight: bolder;
+   }
+
+   .signuppopup{
+   border: 1px solid ;
+   width: 300px;
+   margin-left: 80%;
+   margin-top: 50px;
+   position: absolute;
+   top: 70px ;
+   z-index: 1;
+   transform: translate(2%,0%) scale(0.1);
+   transition: transform 0.4s,top 0.4s; 
+   visibility: hidden;
+   border-radius: 5px;
+   
+   }
+   .opensignup{
+       background-color: rgb(198, 198, 213);
+       visibility: visible;
+        /* top: 250px; */
+       transform:translate(0%,-10%) scale(1); 
+   }
+   #logout{
+       /* border: 1px solid; */
+       background-color: aliceblue;
+       border-radius: 5px;
+       font-size: 14px;
+       text-align: center;
+
+   }
+   .signin{
+       background-color: rgb(219, 216, 212);
+       border-radius: 5px;
+       text-align: center;
+   }
       /* ........................ */
 
   
@@ -246,7 +258,6 @@ display: block;
     width: 30px;
     height: 30px;
     border-radius: 25px;
-    border: 0px;
     margin-top: 15px;
   }
   #colorbutton button:nth-child(1) {
@@ -367,7 +378,7 @@ display: block;
         
     }
     #footer-two-one{
-        border: 1px solid;
+        /* border: 1px solid; */
        width:20%;
        display: flex;
        height: 40px;
@@ -376,7 +387,7 @@ display: block;
        margin-top: 20px;
     }
     #footer-two-one div{
-         border: 1px solid;
+         /* border: 1px solid; */
     }
     #footer-two-one img{
         width:50%;
@@ -384,7 +395,7 @@ display: block;
     #footer-two-two {
         width: 10%;
         height: 40px;
-      border: 1px solid;
+      /* border: 1px solid; */
       margin-left: 7%;
       margin-top: 20px;
     }

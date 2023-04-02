@@ -1,5 +1,5 @@
 
-let url="http://localhost:8500" 
+let url="https://lazy-plum-marlin-gown.cyclic.app/" 
 let token=localStorage.getItem("logintoken")||null
 let cartpage=document.getElementById("cartpage");
 let userid=localStorage.getItem("userid")||null
@@ -212,101 +212,99 @@ fetch(`${url}/users`,{
 })
 
 }
-// window.addEventListener("load",()=>{
-    showdom()
+showdom()
+
+// // ....sigin up .....................................
+
+// console.log(token)
+
+
+// let signinpop=document.getElementById("signinpopup")
+// let signuppop=document.getElementById("signuppopup")
+
+// let signin =document.getElementById("nav_four")
+
+
+// function opensignin(){
+//     signinpop.classList.add("opensignin")
+// }
+// function closesignin(){
+//     signinpop.classList.remove("opensignin")
+// }
+
+// function opensignup(){
+//    signuppop.classList.add("opensignup")
+// }
+// function closesignup(){
+//     signuppop.classList.remove("opensignup")
+// }
+
+// // sign in popup
+// let count=0
+// signin.addEventListener("click",()=>{
+//     if(!token){
+//     count++
+//    if(count%2!==0){
+//     opensignin()
+//    }
+//    else{
+//     closesignup()
+//     closesignin()
+//    }
+// }
 // })
 
-// ....sigin up .....................................
+//  //signn up popup
+// let signup=document.getElementById("signup")
 
-console.log(token)
+// signup.addEventListener("click",()=>{
+//     closesignin()
+//     opensignup()
+// })
 
-
-let signinpop=document.getElementById("signinpopup")
-let signuppop=document.getElementById("signuppopup")
-
-let signin =document.getElementById("nav_four")
-
-
-function opensignin(){
-    signinpop.classList.add("opensignin")
-}
-function closesignin(){
-    signinpop.classList.remove("opensignin")
-}
-
-function opensignup(){
-   signuppop.classList.add("opensignup")
-}
-function closesignup(){
-    signuppop.classList.remove("opensignup")
-}
-
-// sign in popup
-let count=0
-signin.addEventListener("click",()=>{
-    if(!token){
-    count++
-   if(count%2!==0){
-    opensignin()
-   }
-   else{
-    closesignup()
-    closesignin()
-   }
-}
-})
-
- //signn up popup
-let signup=document.getElementById("signup")
-
-signup.addEventListener("click",()=>{
-    closesignin()
-    opensignup()
-})
-
-let signinalready=document.getElementById("signinalready")
-signinalready.addEventListener("click",()=>{
-    console.log(opensignup())
-    closesignup()
-    opensignin()
-})
+// let signinalready=document.getElementById("signinalready")
+// signinalready.addEventListener("click",()=>{
+//     console.log(opensignup())
+//     closesignup()
+//     opensignin()
+// })
 
 
 
-let signupsubmit=document.getElementById("signupsubmit")
+// let signupsubmit=document.getElementById("signupsubmit")
 
-//  signup............................
-signupsubmit.addEventListener("click",()=>{
+// //  signup............................
+// signupsubmit.addEventListener("click",()=>{
     
-    let confirmpassword=document.getElementById("signuppasswordconfirm").value
-let password=document.getElementById("signuppassword").value
-let username=document.getElementById("username").value
-console.log(password,confirmpassword)
-if(password===confirmpassword && username&&password){
-    fetch("http://localhost:8500/users/register",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({
-            email:document.getElementById("signupemail").value,
-            password:document.getElementById("signuppassword").value,
-            username:document.getElementById("username").value
-        })
-       })
-       .then(res=>res.json())
-       .then(data=>{
-           let message=document.getElementById("message")
-           message.innerText=data.message
+//     let confirmpassword=document.getElementById("signuppasswordconfirm").value
+// let password=document.getElementById("signuppassword").value
+// let username=document.getElementById("username").value
+// console.log(password,confirmpassword)
+// if(password===confirmpassword && username&&password){
+//     fetch("https://lazy-plum-marlin-gown.cyclic.app//users/register",{
+//         method:"POST",
+//         headers:{
+//             "Content-Type":"application/json"
+//         },
+//         body:JSON.stringify({
+//             email:document.getElementById("signupemail").value,
+//             password:document.getElementById("signuppassword").value,
+//             username:document.getElementById("username").value
+//         })
+//        })
+//        .then(res=>res.json())
+//        .then(data=>{
+//            let message=document.getElementById("message")
+//            message.innerText=data.message
         
-       }) 
-    }
-    else{
-        let message=document.getElementById("message")
-        message.innerText="please check password"
+//        }) 
+//     }
+//     else{
+//         let message=document.getElementById("message")
+//         message.innerText="please check password"
     
-}
-})
+// }
+// })
 
 let signinsubmit=document.getElementById("signinsubmit")
 
@@ -317,7 +315,7 @@ signinsubmit.addEventListener("click",()=>{
         
      }
      console.log(obj)
-     let url=`http://localhost:8500/users/login`
+     let url=`https://lazy-plum-marlin-gown.cyclic.app//users/login`
      fetch(url,{
       method:"POST",
       headers:{
