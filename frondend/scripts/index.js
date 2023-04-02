@@ -1,4 +1,4 @@
-let url="http://localhost:8500"
+let url="https://lazy-plum-marlin-gown.cyclic.app/"
 
 
 let token=localStorage.getItem("logintoken")||null
@@ -82,7 +82,7 @@ let password=document.getElementById("signuppassword").value
 let username=document.getElementById("username").value
 console.log(password,confirmpassword)
 if(password===confirmpassword && username&&password){
-    fetch("http://localhost:8500/users/register",{
+    fetch("https://lazy-plum-marlin-gown.cyclic.app//users/register",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -109,6 +109,7 @@ if(password===confirmpassword && username&&password){
 
 let signinsubmit=document.getElementById("signinsubmit")
 
+// login in............
 signinsubmit.addEventListener("click",()=>{
     let obj={
         email:document.getElementById("signinemail").value,
@@ -116,7 +117,7 @@ signinsubmit.addEventListener("click",()=>{
         
      }
      console.log(obj)
-     let url=`http://localhost:8500/users/login`
+     let url=`https://lazy-plum-marlin-gown.cyclic.app//users/login`
      fetch(url,{
       method:"POST",
       headers:{
@@ -128,11 +129,19 @@ signinsubmit.addEventListener("click",()=>{
      .then(data=>{
         console.log(data)
          console.log(data.token)
+         if(data.token){
          localStorage.setItem("logintoken",data.token)
-       
+         setTimeout(()=>{
+            window.location.reload()
+         },1000)
+         }
+        
      })
-
+     
+     
 })
+
+// display user...
   if(token){
  async function displayuser(){
     try{
@@ -152,6 +161,11 @@ signinsubmit.addEventListener("click",()=>{
         logout.innerText="log out"
         logout.addEventListener("click",()=>{
             localStorage.removeItem("logintoken");
+            
+            setTimeout(()=>{
+                window.location.reload()
+            },1000)
+           
         })
 
     })

@@ -65,28 +65,30 @@
                  </div>  
            </div>
            <div id="nav_three">
-            <input type="text" placeholder="search">
+            <input id="search" type="text" placeholder="search">
            </div>
            <div id="nav_four">
-            <h4 id="signin">sign in</h4>
+            <h4 id="signin" class="signin">sign in</h4>
             <h4 id="logout"></h4>
            </div>
            <div id="nav_five">
-               <a href="./cart.html">
                <img  src="https://static.cure.fit/assets/images/cart-icon-new.svg" alt="">
-                </a>
            </div>
         </nav>
     </div>
     <!-- nav end.............................. -->
+
+     <!-- serach dropdown -->
+     <div id="searchdropdown" class="searchdropdown">
+
+     </div>
+     <!-- serach end.................... -->
     <div id="women-main">
-        <div>
-            <h2>WOMEN'S STYLES</h2>
-        </div>
+        
         <div id="sortby">
             <select name="sort by" id="sort">
                 <option value="">sort</option>
-                <option value="htigh to low">price:high to low</option>
+                <option value="high to low">price:high to low</option>
                 <option value="low to high">price:low to high</option>
             </select>
         </div>
@@ -110,11 +112,6 @@
                     <span><i class="fa fa-angle-down" style="font-size:24px"></i></span>
                 </div>
                 <div  class="filter-dropdown" id="rating-dropdown">
-                    <!-- <h4>above 4 <span class="fa fa-star checked"></span></h4>
-                    <h4>above 3 <span class="fa fa-star checked"></span></h4>
-                    <h4>above 2 <span class="fa fa-star checked"></span></h4>
-                    <h4>above 1 <span class="fa fa-star checked"></span></h4> -->
-                  
                 </div>
             </div>
              <div id="product">
@@ -122,7 +119,61 @@
              </div>
         </div>
 
-    </div>   
+    </div> 
+      <!-- footer......... -->
+      <div id="footer">
+        <div id="footer-one">
+          <div>
+            <p><b>Help</b></p>
+            <p>Customer Service</p>
+            <p>Track Order</p>
+            <p>Returns & Exchanges</p>
+            <p>Shipping</p>
+            <p>International Orders</p>
+            <p>Contact Us</p>
+          </div>
+          <div>
+            <p><b>Quick Links</b></p>
+            <p>Find a Store</p>
+            <p>Size Charts</p>
+            <p>Offers & Promotions</p>
+            <p>My Favorites</p>
+          </div>
+          <div>
+            <p><b>About Mawaw</b></p>
+            <p>Our Story</p>
+            <p>Careers</p>
+            <p>Social Responsibility</p>
+            <p>Privacy Policy</p>
+          </div>
+          <div style="display: flex;">
+            <input type="text" placeholder="Enter your Email" style="height: 30px; margin-top: 60px;">
+            <button style="background-color: black; color:white; height: 34px;margin-top: 60px;">SIGN UP</button>
+          </div>
+        </div>
+        <div id="footer-two">
+          <div id="footer-two-one" >
+            <div>
+            <img src="https://www.jcrew.com/next-static/images/sidecar-modules/footer/instagram-2.svg" alt="">
+          </div>
+          <div>
+            <img src="https://www.jcrew.com/next-static/images/sidecar-modules/footer/twitter-2.svg" alt="">
+          </div>
+          <div>
+            <img style="margin-top: 5px;" src="https://www.jcrew.com/next-static/images/sidecar-modules/footer/linkedin.svg" alt="">
+          </div>
+          <div>
+            <img src="https://www.jcrew.com/next-static/images/sidecar-modules/footer/pinterest-2.svg" alt="">
+          </div>
+          <div>
+            <img src="https://www.jcrew.com/next-static/images/sidecar-modules/footer/youtube-2.svg" alt="">
+          </div>
+          </div>
+          <div id="footer-two-two">
+            <img src="macaw logo again.jpg" alt="">
+          </div>
+        </div>
+      </div>  
 </body>
 <script src="./scripts/women.js"></script>
 </html>

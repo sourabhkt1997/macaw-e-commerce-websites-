@@ -1,10 +1,37 @@
-let url="http://localhost:8500" 
+
+let url="https://lazy-plum-marlin-gown.cyclic.app/" 
 let item=localStorage.getItem("element")||null
 console.log(item)
 let add=JSON.parse(localStorage.getItem("cart"))||[]
 let token=localStorage.getItem("logintoken")||null
 let userid=localStorage.getItem("userid")||null
 
+let cartredirect= document.getElementById("nav_five")
+    
+cartredirect.addEventListener("click",()=>{
+    if(token){
+   console.log(8)
+   window.location.href="./cart.html"
+    }
+    else{
+        cartredirect.innerHTML=null
+        cartredirect.innerHTML="PLEASE LOGIN FIRST"
+    }
+
+})
+
+
+let logout=document.getElementById("logout")
+      
+        logout.addEventListener("click",()=>{
+             if(token){
+            console.log("ooo")
+            localStorage.removeItem("logintoken")
+            setTimeout(()=>{
+                window.location.reload()
+            },1000)
+        }
+ })
 
 // sigin in and sign up...................
 
@@ -70,7 +97,7 @@ let password=document.getElementById("signuppassword").value
 let username=document.getElementById("username").value
 console.log(password,confirmpassword)
 if(password===confirmpassword && username&&password){
-    fetch("http://localhost:8500/users/register",{
+    fetch("https://lazy-plum-marlin-gown.cyclic.app//users/register",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -104,7 +131,7 @@ signinsubmit.addEventListener("click",()=>{
         
      }
      console.log(obj)
-     let url=`http://localhost:8500/users/login`
+     let url=`https://lazy-plum-marlin-gown.cyclic.app//users/login`
      fetch(url,{
       method:"POST",
       headers:{
@@ -116,7 +143,14 @@ signinsubmit.addEventListener("click",()=>{
      .then(data=>{
         console.log(data)
          console.log(data.token)
+         if(data.token){
          localStorage.setItem("logintoken",data.token)
+         setTimeout(()=>{
+            window.location.reload()
+         },1000)
+         }
+         
+         
      })
 })
 // .............................................................
@@ -177,10 +211,9 @@ async function product(){
  
 let userobj=null
 
-// ....checkig product alreadt in cart............
+//checking cart /........................
 let addtocart=document.getElementById("parchase")
 if(token){
-window.addEventListener("load",()=>{
     async function displayuser(){
        try{
         fetch(`${url}/users`,{
@@ -197,7 +230,12 @@ window.addEventListener("load",()=>{
         let logout=document.getElementById("logout")
         logout.innerText="log out"
         logout.addEventListener("click",()=>{
-            localStorage.removeItem("logintoken");
+            console.log("ooo")
+            localStorage.removeItem("logintoken")
+            setTimeout(()=>{
+                window.location.reload()
+            },1000)
+           
         })
          for(let i=0;i<data[0].cartlist.length;i++){
 
@@ -213,8 +251,11 @@ window.addEventListener("load",()=>{
    }
    }
    displayuser()
-   })
 }
+
+
+
+
 
 // .................adding to cart............
 addtocart.addEventListener("click",(e)=>{
