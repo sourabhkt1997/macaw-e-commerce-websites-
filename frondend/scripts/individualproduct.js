@@ -221,7 +221,6 @@ addtocart.addEventListener("click",(e)=>{
 
     e.preventDefault()
     if(token){
-    console.log(userobj,"qqqq")
     let x=true;
     if(userobj.cartlist.length!==0){
     for(let i=0;i<userobj.cartlist.length;i++){

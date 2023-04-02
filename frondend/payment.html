@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        #paymentdiv{
+            width: 350px;
+            /* border: 1px solid; */
+            text-align: center;
+            margin: auto;
+            margin-top: 250px;
+            background-color: aqua;
+            border-radius: 10px;
+        } 
+        #input1 {
+            width: 300px;
+            height: 50px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 0px;
+        }
+        .upi_div{
+            width: 400px;
+            height:300px;
+            position: absolute;
+            top:0;
+            left: 38%;
+            text-align: center;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            transform: translate(0%,0%) scale(0.1);
+            visibility: hidden;
+            transition: transform 0.4s,top 0.4s;
+            z-index: 1;
+        }
+        .upi_div button{
+            width: 80px;
+            background-color: rgb(206, 79, 81);
+            border-radius: 9px;
+            border: 0px;
+        }
+        .open{
+            visibility: visible;
+            top: 250px;
+            transform:translate(0%,-10%) scale(1);
+        }
+        img{
+            width:30%;
+            margin-top: 20px;
+        }
+        #submit{
+            margin-top: 10px;
+            width: 300px;
+            height: 25px;
+            margin-bottom: 10px;
+        }
+        .processpage{
+            text-align: center;
+            width: 352px;
+            height:200px;
+            position: absolute;
+            top:0;
+            left: 38.5%;
+            text-align: center;
+            background-color: rgb(215, 250, 240);
+            border-radius: 10px;
+            transform: translate(2%,0%) scale(0.1);
+            visibility: hidden;
+            transition: transform 0.4s,top 0.4s;
+        }
+        .openprocess{
+            visibility: visible;
+            top: 250px;
+            transform:translate(0%,-10%) scale(1); 
+        }
+        .processpage h1{
+            margin-top: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="paymentdiv">
+        <h4>Enter your Upi id</h4>
+        <input id="input1" type="email" placeholder=" upi id" >
+        <button id="submit" onclick="openPopup();openprocess()" >submit</button>
+    </div>
+    <div id="aa">
+    <div class="upi_div" id="upi_div">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1024px-Flat_tick_icon.svg.png" alt="">
+       <h1>Payment successfull<br>Thank you</h1>
+       <button id="close" onclick="closePopup()">close</button>
+    </div> 
+    </div>
+    <div class="processpage" id="processpage">
+       <h1>wait few seconds<br>Do not refresh the page</h1>
+    </div>
+
+</body>
+<script src="scripts/payment.js"></script>
+</html>
