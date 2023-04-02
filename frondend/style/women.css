@@ -392,6 +392,9 @@ font-weight: bolder;
     border-bottom: 1px solid gray;
     text-align: center;
 }
+#worddiv:hover{
+    background-color: antiquewhite;
+}
 
 /* footer     .................. */
 #footer{
